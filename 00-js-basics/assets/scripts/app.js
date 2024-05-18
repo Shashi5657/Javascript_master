@@ -22,6 +22,7 @@ function add(a, b){
     return result
 }
 
+
 currentResult = add(5, 1);  
 add(1, 2)
 
