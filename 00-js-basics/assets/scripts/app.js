@@ -1,3 +1,43 @@
+const defaultResult = 0;
+let currentResult = defaultResult;
+
+function add() {
+  //parseInt converts string to number, alternative way is using +
+  //such as currentResult + +userInput.value
+  const enteredValue = parseInt(userInput.value);
+  const calcDescription = `${currentResult} + ${enteredValue}`;
+  currentResult = currentResult + enteredValue;
+  outputResult(currentResult, calcDescription);
+}
+
+function subtract() {
+  const enteredValue = parseInt(userInput.value);
+  const calcDescription = `${currentResult} - ${enteredValue}`;
+  currentResult -= enteredValue;
+  outputResult(currentResult, calcDescription);
+}
+
+function multiply() {
+  const enteredValue = parseInt(userInput.value);
+  const calcDescription = `${currentResult} * ${enteredValue}`;
+  currentResult *= enteredValue;
+  outputResult(currentResult, calcDescription);
+}
+
+function divide() {
+  const enteredValue = parseInt(userInput.value);
+  const calcDescription = `${currentResult} / ${enteredValue}`;
+  currentResult = currentResult / enteredValue;
+  outputResult(currentResult, calcDescription);
+}
+
+addBtn.addEventListener("click", add);
+subtractBtn.addEventListener("click", subtract);
+multiplyBtn.addEventListener("click", multiply);
+divideBtn.addEventListener("click", divide);
+
+let outputText = "( " + defaultResult + " + 10) * 10/5 - 5";
+
 // let userName = 'shashi';
 // let userId = 2024;
 // let isStudent = true;
@@ -14,21 +54,5 @@
 
 // sayHello('shashi')
 
-const defaultResult = 0
-let currentResult = defaultResult
-
-function add(a, b){
-    const result = a + b;
-    return result
-}
-
-
-currentResult = add(5, 1);  
-add(1, 2)
-
-// currentResult = (currentResult + 10) * 10/5 - 5
-
-let outputText = '( ' + defaultResult + ' + 10) * 10/5 - 5'
-
-outputResult(currentResult, outputText)
-
+// currentResult = add(5, 1);
+// add(1, 2)
