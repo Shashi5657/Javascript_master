@@ -60,10 +60,10 @@ startGameBtn.addEventListener("click", () => {
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();
   let winner;
-  if(playerChoice){
+  if (playerChoice) {
     winner = getWinner(computerChoice, playerChoice);
   } else {
-    winner = getWinner(computerChoice)
+    winner = getWinner(computerChoice);
   }
   // console.log(playerChoice, 'Player')
   // console.log(computerChoice, 'Computer')
@@ -79,7 +79,7 @@ startGameBtn.addEventListener("click", () => {
   }
 
   alert(message);
-  gameIsRunning = false
+  gameIsRunning = false;
 });
 
 //addEventListener is called method, startGame is called function
@@ -87,3 +87,23 @@ startGameBtn.addEventListener("click", () => {
 //params vs arguments
 // while declaring function, we write parameters in the bracketts()
 //while calling functions, we write arguments in the brackets()
+
+//spread operator or Rest operator..
+function sumUp(...numbers) {
+  let sum = 0;
+  for (let num of numbers) {
+    sum += num;
+  }
+  return sum;
+}
+
+function subtractUp() {
+  let sum = 0;
+  for (const num of arguments) {
+    sum -= num;
+  }
+  return sum;
+};
+
+console.log(sumUp(1, 8, 6, 3));
+console.log(subtractUp(36, 12, 6,3))
