@@ -184,6 +184,7 @@
 // }))]
 
 
+
 //array destructuring
 
 const names = ['shashi', 's', 'Mr' , 23, 'Villain']
