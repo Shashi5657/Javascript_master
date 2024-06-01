@@ -5,13 +5,15 @@ const movieList = document.getElementById('movie-list')
 movieList.style['display'] = 'block'
 movieList.style['backgroundColor'] = 'red'
 
-
+const userChosenKeyName = 'level'
 const person = {
   //we can also use key name like this, if we want to use any other symbols like -
   //we should wrap the key in single quotes
   "first-name": "Shashi",
   // name : 'Shashi',
   age: 22,
+  //to access dynamic user entered values
+  [userChosenKeyName] : '...',
   hobbies: ["Cooking", "Coding"],
   greet: function () {
     alert("Hii there!");
