@@ -1,38 +1,63 @@
-//other example of using obj keys in array like ways
+const addMovieBtn = document.getElementById("add-movie-btn");
+const searchBtn = document.getElementById("search-btn");
 
-const movieList = document.getElementById('movie-list')
+let movies = [];
 
-movieList.style['display'] = 'block'
-movieList.style['backgroundColor'] = 'red'
+const addMovieHandler = () => {
+  const title = document.getElementById("title").value;
+  const extraName = document.getElementById("extra-name").value;
+  const extraValue = document.getElementById("extra-value").value;
 
-const userChosenKeyName = 'level'
-const person = {
-  //we can also use key name like this, if we want to use any other symbols like -
-  //we should wrap the key in single quotes
-  "first-name": "Shashi",
-  // name : 'Shashi',
-  age: 22,
-  //to access dynamic user entered values
-  [userChosenKeyName] : '...',
-  hobbies: ["Cooking", "Coding"],
-  greet: function () {
-    alert("Hii there!");
-  },
+  if (
+    title.trim() === "" ||
+    extraName.trim() === "" ||
+    extraValue.trim() === ""
+  ) {
+    return;
+  }
+
+  const newMovie = {
+    info: { title, [extraName]: extraValue },
+    id: Math.random(),
+  };
+
+  movies.push(newMovie);
+  console.log(newMovie);
 };
 
-//now to access that kind of keys, we know obj are arrays
+addMovieBtn.addEventListener("click", addMovieHandler);
 
-console.log(person['first-name'])
+// //other example of using obj keys in array like ways
+// const movieList = document.getElementById('movie-list')
 
-//to add a new property or to modify a prop in object
+// movieList.style['display'] = 'block'
+// movieList.style['backgroundColor'] = 'red'
 
-person.isAdmin = true;
-person.age = 23;
+// const userChosenKeyName = 'level'
+// const person = {
+//   //we can also use key name like this, if we want to use any other symbols like -
+//   //we should wrap the key in single quotes
+//   "first-name": "Shashi",
+//   // name : 'Shashi',
+//   age: 22,
+//   //to access dynamic user entered values
+//   [userChosenKeyName] : '...',
+//   hobbies: ["Cooking", "Coding"],
+//   greet: function () {
+//     alert("Hii there!");
+//   },
+// };
 
-//to delete a prop in obj
+// //now to access that kind of keys, we know obj are arrays
+// console.log(person['first-name'])
 
-delete person.age;
+// //to add a new property or to modify a prop in object
+// person.isAdmin = true;
+// person.age = 23;
 
-console.log(person);
+// //to delete a prop in obj
+// delete person.age;
 
-person.greet();
+// console.log(person);
+
+// person.greet();
