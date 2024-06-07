@@ -23,7 +23,7 @@ const renderedMovies = (filter = "") => {
     const movieEl = document.createElement("li");
     //obj destructuring
     const { info } = movie;
-    let text = info.title + " - ";
+    let text = movie.getFormattedTitle() + " - ";
     for (const key in info) {
       if (key !== "title") {
         text = text + `${key}:${info[key]}`;
@@ -50,6 +50,9 @@ const addMovieHandler = () => {
   const newMovie = {
     info: { title, [extraName]: extraValue },
     id: Math.random(),
+    getFormattedTitle : function(){
+      return this.info.title.toUpperCase()
+    }
   };
 
   movies.push(newMovie);
